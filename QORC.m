@@ -9,8 +9,6 @@ classdef QORC
         function output = HardDecidion(obj, Ipart, Qpart, RC)
             RC_len = length(RC);
             output = [0 0 0 0];
-            %sinus = sin(2*pi*freq*(0:1:19)*obj.d_Tb);
-            %cosinus = cos(2*pi*freq*(0:1:19)*obj.d_Tb);
 
             buffer = zeros(2, 60);
             part1=1:RC_len+1;

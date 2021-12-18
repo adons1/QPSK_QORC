@@ -92,11 +92,10 @@ classdef QPSK
             
             bi_s = zeros(1, length(bi_upsampled));
             bq_s = zeros(1, length(bq_upsampled));
-            
-            for i=1:length(bi_upsampled)-1
-                index=floor(i/(upsample_N+1))*(upsample_N + 1)+1;
-                bi_s(i)=bi_upsampled(index);
-                bq_s(i)=bq_upsampled(index);
+                        
+            for i=1:upsample_N
+                bi_s= bi_s + circshift(bi_upsampled,i);
+                bq_s= bq_s + circshift(bq_upsampled,i);
             end
             
             basebandQPSK=bi_s+bq_s;
