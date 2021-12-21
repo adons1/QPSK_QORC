@@ -18,15 +18,19 @@ toc
 DensitySpectrum(modemQPSK, modemQORC, signalQORC);
 toc
 
-SNR=0:1.0:15.0;
+SNR=(0:1.0:15.0);
 [errsQPSK]=model(modemQPSK, signalQPSK, SNR);
-[errsQORC]=model(modemQORC, signalQORC, SNR);
+SNR_for_QORC=(0:1.0:15.0)-7.0;
+[errsQORC]=model(modemQORC, signalQORC, SNR_for_QORC);
 toc
 
-hold on
+ figure
+% hold on
 semilogy(SNR-10*log10(2), errsQPSK, SNR-10*log10(2), errsQORC);
-legend('QORC','QPSK');
-hold off
+% plot(SNR-10*log10(2), log10(errsQPSK));
+% plot(SNR+10*log10(2), log10(errsQORC));
+legend('QPSK','QORC');
+% hold off
 
 
 

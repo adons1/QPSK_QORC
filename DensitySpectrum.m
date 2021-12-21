@@ -32,5 +32,6 @@ function [] = DensitySpectrum(modemQPSK, modemQORC, signalQORC)
     semilogy(Pob_QPSK,'r','LineWidth',1);
     legend('QORC','QPSK')
     grid on
+    hold off
 end
 

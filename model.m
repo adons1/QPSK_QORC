@@ -7,8 +7,5 @@ function [Errors] = model(modem, signal, SNR)
 
         index=index+1;
     end
-    figure;
-    grid on;
-    semilogy(SNR-10*log10(2),Errors)
 end
 

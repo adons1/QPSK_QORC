@@ -104,7 +104,7 @@ classdef QPSK
             y = fftshift(fft(basebandQPSK));
             
             n = length(basebandQPSK);
-            f = (-n/2:n/2-1)*(Fs/(obj.N/2));   
+            f = (-n/2:n/2-1)*(Fs/(obj.N/1.89));   
             spectral_density = abs(y).^2/n;  
             
             if(print==true)
